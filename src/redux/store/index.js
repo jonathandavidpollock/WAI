@@ -4,7 +4,7 @@ import {routerMiddleware} from 'react-router-redux'
 
 
 //import root reducer
-import rootReducer from '../Reducers'
+import rootReducer from '../reducers'
 import comments from './data/comments'
 import posts from './data/posts'
 
