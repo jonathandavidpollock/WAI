@@ -10,11 +10,11 @@ class Comments extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(evt){
-    console.log("----> Changed");
+  handleChange(e){
+    const i = this.refs.keys.innerHTML
     const {postId} = this.props.match.params // deconstruct route params
-    const comment = this.refs.txt.value
-    this.props.updateComment(postId, comment)
+    const comment = e.target.innerHTML
+    this.props.updateComment(i, comment, postId)
   }
 
 	renderComment(comment, i) {
@@ -22,11 +22,14 @@ class Comments extends Component {
 		return (
 			<div key={i}>
 				<p>
+          <div hidden ref="keys">{i}</div>
           <ContentEditable
                 html={comment.text}
+                index={i}
                 disabled={false}
-                onBlur={this.handleChange}
+                onBlur={this.handleChange.bind()}
                 ref="txt"
+
           />
 					<button onClick={this.props.removeComment.bind(null, postId, i)}>&times;</button>
 				</p>
@@ -39,7 +42,7 @@ class Comments extends Component {
 		const {postId} = this.props.match.params // deconstruct route params
 		const comment = this.refs.comment.value
 		this.props.addComment(postId,comment)
-    this.ref.commentForm.reset;
+    this.refs.commentForm.reset;
 	}
 
 	render() {

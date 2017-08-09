@@ -24,10 +24,12 @@ export function removeComment(postId, i) {
 	}
 }
 
-export function updateComment(postId, i) {
+export function updateComment(i, comment, postId) {
+	console.log("__________ Game Of THRONEs");
 	return {
 		type: 'UPDATE_COMMENT',
-		postId,
-		i
+		i,
+		comment,
+		postId
 	}
 }

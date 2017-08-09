@@ -10,18 +10,25 @@ function postComments(state=[], action) {
 				// Spread and skip over the comment
 				...state.slice(0,action.i),
 				...state.slice(action.i + 1)
-			]
+			];
 		case 'UPDATE_COMMENT':
+		 console.log("-------------");
+		 console.log("Wes is Bos");
 			console.log(state[action.i]);
-			return state;
+			console.log("Comment:", action.comment);
+			return [
+				...state.slice(0, action.i),
+				{text:action.comment},
+				...state.slice(action.i + 1)
+			]
 
 		default:
 			return state;
 	}
-	return state
 }
 
 function comments(state = [], action) {
+	console.log("----------- I am HERE");
   if(typeof action.postId !== 'undefined') {
     return {
       // take the current state
