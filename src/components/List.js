@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class Photo extends Component {
+class List extends Component {
 	render() {
 		const { post, comments, increment, i } = this.props
 		return (
@@ -17,4 +17,4 @@ class Photo extends Component {
 <button onClick={()=> increment(i)}> &hearts; {post.likes} </button>
 <p>{comments[post.code] ? comments[post.code].length : 0}</p>
 */
-export default Photo
+export default List

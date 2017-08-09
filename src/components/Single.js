@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Photo from './Photo'
+import List from './List'
 import Comments from './Comments'
 
 class Single extends Component {
@@ -13,7 +13,7 @@ class Single extends Component {
 		console.log(post)
 		return (
 			<div>
-				<Photo i={i} post={post} {...this.props}/>
+				<List i={i} post={post} {...this.props}/>
 				<Comments postComments={postComments} {...this.props}/>
 			</div>
 		)

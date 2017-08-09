@@ -8,7 +8,7 @@ import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './redux/store'
 
 import App from './components/App'
-import Photogrid from './components/Photogrid'
+import Lists from './components/Lists'
 import Single from './components/Single'
 
 import 'react-redux'
@@ -18,7 +18,7 @@ const router = (
 		<nav>
 			<Route exact path="/" render={() => (
 					<App>
-						<Photogrid />
+						<Lists />
 					</App>
 			)}/>
 			<Route path="/view/:postId" render={({match}) => (

@@ -16,7 +16,6 @@ body {
 
 .App-header {
   background-color: #A54657;
-  height: 70px;
   padding: 20px;
   color: white;
 }
@@ -71,6 +70,7 @@ a {
 .item p  {
   text-decoration: none;
   font-size: 2rem;
+  font-weight:bold;
 }
 
 .subheader, h4 {
@@ -109,6 +109,10 @@ button:hover {
 .todo button {
   position:absolute;
   right:0;
-  top:0;
+  top: -4px;
   font-size:2rem;
+}
+
+.todo button:hover {
+  color:#A54657;
 }

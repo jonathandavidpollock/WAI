@@ -7,9 +7,10 @@ export function increment(index) {
 }
 
 // add comment
-export function addComment(comment) {
+export function addComment(postId, comment) {
 	return {
 		type: 'ADD_COMMENT',
+		postId,
 		comment
 	}
 }

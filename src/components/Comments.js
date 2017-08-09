@@ -13,7 +13,9 @@ class Comments extends Component {
 		return (
 			<div key={i}>
 				<p>
-					{comment.text}
+					<span contentEditable="true">
+            {comment.text}
+					</span>
 					<button onClick={this.props.removeComment.bind(null, postId, i)}>&times;</button>
 				</p>
 			</div>
@@ -25,6 +27,7 @@ class Comments extends Component {
 		const {postId} = this.props.match.params // deconstruct route params
 		const comment = this.refs.comment.value
 		this.props.addComment(postId,comment)
+    this.ref.commentForm.reset;
 	}
 
 	render() {
