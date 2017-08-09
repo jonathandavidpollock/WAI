@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ContentEditable from "react-contenteditable";
 
 class Comments extends Component {
 
@@ -6,6 +7,14 @@ class Comments extends Component {
     super();
     this.renderComment = this.renderComment.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(evt){
+    console.log("----> Changed");
+    const {postId} = this.props.match.params // deconstruct route params
+    const comment = this.refs.txt.value
+    this.props.updateComment(postId, comment)
   }
 
 	renderComment(comment, i) {
@@ -13,9 +22,12 @@ class Comments extends Component {
 		return (
 			<div key={i}>
 				<p>
-					<span contentEditable="true">
-            {comment.text}
-					</span>
+          <ContentEditable
+                html={comment.text}
+                disabled={false}
+                onBlur={this.handleChange}
+                ref="txt"
+          />
 					<button onClick={this.props.removeComment.bind(null, postId, i)}>&times;</button>
 				</p>
 			</div>

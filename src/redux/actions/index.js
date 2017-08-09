@@ -23,3 +23,11 @@ export function removeComment(postId, i) {
 		i
 	}
 }
+
+export function updateComment(postId, i) {
+	return {
+		type: 'UPDATE_COMMENT',
+		postId,
+		i
+	}
+}

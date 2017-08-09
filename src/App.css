@@ -116,3 +116,7 @@ button:hover {
 .todo button:hover {
   color:#A54657;
 }
+
+[contenteditable="true"]:focus {
+  outline:none;
+}

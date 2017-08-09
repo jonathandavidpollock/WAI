@@ -6,12 +6,14 @@ function postComments(state=[], action) {
       }];
 
 		case 'REMOVE_COMMENT':
-		return [
-			// Spread and skip over the comment
-			...state.slice(0,action.i),
-			...state.slice(action.i + 1)
-		]
-
+			return [
+				// Spread and skip over the comment
+				...state.slice(0,action.i),
+				...state.slice(action.i + 1)
+			]
+		case 'UPDATE_COMMENT':
+			console.log(state[action.i]);
+			return state;
 
 		default:
 			return state;
