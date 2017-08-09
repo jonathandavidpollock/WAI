@@ -1,7 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import 'react-redux'
-import './index.css'
 import registerServiceWorker from './registerServiceWorker'
 
 import { Route } from 'react-router-dom'
@@ -12,6 +10,9 @@ import store, { history } from './redux/store'
 import App from './components/App'
 import Photogrid from './components/Photogrid'
 import Single from './components/Single'
+
+import 'react-redux'
+import './App.css'
 
 const router = (
 		<nav>

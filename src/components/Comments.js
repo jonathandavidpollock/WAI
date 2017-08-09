@@ -2,26 +2,32 @@ import React, { Component } from 'react';
 
 class Comments extends Component {
 
-	// renderComment = (comment, i) => {
-	// 	return (
-	// 		<div key={i}>
-	// 			<p>
-	// 				<strong>{comment.user}</strong>
-	// 				{comment.text}
-	// 				<button>&times;</button>
-	// 			</p>
-	// 		</div>
-	// 	)
-	// }
-  //
-	// handleSubmit = (e) => {
-	// 	e.preventDefault()
-	// 	const {postId} = this.props.match.params // deconstruce route params
-	// 	const author = this.refs.author.value
-	// 	const comment = this.refs.comment.value
-	// 	// console.log('hey', postId, author, comment)
-	// 	this.props.addComment(postId, author, comment)
-	// }
+  constructor() {
+    super();
+    this.renderComment = this.renderComment.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+	renderComment(comment, i) {
+		return (
+			<div key={i}>
+				<p>
+					<strong>{comment.user}</strong>
+					{comment.text}
+					<button>&times;</button>
+				</p>
+			</div>
+		)
+	}
+
+	handleSubmit(e) {
+		e.preventDefault()
+		const {postId} = this.props.match.params // deconstruce route params
+		const author = this.refs.author.value
+		const comment = this.refs.comment.value
+		// console.log('hey', postId, author, comment)
+		this.props.addComment(postId, author, comment)
+	}
 
 	render() {
 		const {postComments} = this.props

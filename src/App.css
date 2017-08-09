@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,700');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -8,8 +15,8 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #A54657;
+  height: 70px;
   padding: 20px;
   color: white;
 }
@@ -24,7 +31,48 @@
 }
 
 pre {
+
+}
+
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background-color:#E8D6CB;
+}
+
+.App-header a {
+  text-decoration: none;
+  font-size: 4rem;
+  color: #E8D6CB;
+  font-family: 'Roboto Slab', serif;
+}
+
+a {
+  text-decoration: none;
+  color:#5D2E46;
+}
+
+.App-header h2 {
   display:flex;
-  justify-content: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  vertical-align: center;
+}
+
+.item {
+  background-color: #D0ADA7;
+  /*border: 1px solid #5D2E46;*/
+  padding:10px;
+  border-radius:20px;
+  margin:20px auto;
+  max-width:90%;
+}
+
+.item p  {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.subheader {
+  color:#AF9164;
 }
