@@ -9,18 +9,13 @@ function comments(state=[], action) {
 
 		case 'REMOVE_COMMENT':
 			console.log("Attempting to Remove comment");
-			console.log(typeof state);
-			console.log(state);
-			console.log(`-------> Post Id ${action.postId}`);
-			const copiedState = Object.assign({}, state);
-			console.log("--------------");
-			console.log(typeof copiedState);
-			console.log(copiedState);
-			console.log("--------------");
-			return {
-					...copiedState.slice(0, action.postId), // before what we are updating
-					...copiedState.slice(action.postId + 1) // after the deleted one
-			}
+			const postId = action.postId
+			const i = action.i
+			console.log(state[postId][i]);
+			const items = {...state};
+    	delete items[postId][i];
+
+			return items
 
 		default:
 			return state;
