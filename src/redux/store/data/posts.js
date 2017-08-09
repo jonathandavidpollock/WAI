@@ -14,7 +14,7 @@ const posts = [
     },
    {
       "code":"BAF_KY4wcRY",
-      "caption":"Vacation packing list",
+      "caption":"Vacation Packing list",
       "likes":79,
       "id":"1154606670337393752"
     },

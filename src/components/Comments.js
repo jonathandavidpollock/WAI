@@ -9,12 +9,12 @@ class Comments extends Component {
   }
 
 	renderComment(comment, i) {
+    const {postId} = this.props.match.params
 		return (
 			<div key={i}>
 				<p>
-					<strong>{comment.user}</strong>
 					{comment.text}
-					<button>&times;</button>
+					<button onClick={this.props.removeComment.bind(null, postId, i)}>&times;</button>
 				</p>
 			</div>
 		)
@@ -22,23 +22,21 @@ class Comments extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault()
-		const {postId} = this.props.match.params // deconstruce route params
-		const author = this.refs.author.value
+		const {postId} = this.props.match.params // deconstruct route params
 		const comment = this.refs.comment.value
-		// console.log('hey', postId, author, comment)
-		this.props.addComment(postId, author, comment)
+		this.props.addComment(postId,comment)
 	}
 
 	render() {
 		const {postComments} = this.props
 		return (
 			<div>
-				<h4>Comments:</h4>
-				{postComments.map(this.renderComment)}
-
+				<h4>To Dos:</h4>
+        <div className="todo">
+          {postComments.map(this.renderComment)}
+        </div>
 				<form ref="commentForm" onSubmit={this.handleSubmit}>
-					<input type="text" ref="author" placeholder="author"/>
-					<input type="text" ref="comment" placeholder="comment"/>
+					<input type="text" ref="comment" placeholder="Add a to-do"/>
 					<input type="submit" hidden/>
 				</form>
 			</div>

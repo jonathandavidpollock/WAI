@@ -6,7 +6,6 @@ class Single extends Component {
 	render() {
 		const {posts, comments} = this.props // deconstruce out of props
 		const {postId} = this.props.match.params // deconstruce route params
-    console.log(this.props.match);
 		const i = posts.findIndex((post) => post.code === postId)
 		const post = posts[i]
 		const postComments = comments[postId] || []
